@@ -1,0 +1,250 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-highlight: var(--highlight);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --font-display: "Anton", "Arial Narrow", sans-serif;
+  --font-sans: "Barlow", system-ui, sans-serif;
+}
+
+:root {
+  --radius: 0.75rem;
+
+  /* Campanha: azul profundo + laranja vibrante + amarelo faísca */
+  --background: oklch(0.24 0.14 264);
+  --foreground: oklch(0.98 0.01 90);
+  --card: oklch(0.31 0.15 264);
+  --card-foreground: oklch(0.98 0.01 90);
+  --primary: oklch(0.7 0.19 45);
+  --primary-foreground: oklch(0.99 0 0);
+  --secondary: oklch(0.45 0.24 264);
+  --secondary-foreground: oklch(0.99 0 0);
+  --muted: oklch(0.35 0.13 264);
+  --muted-foreground: oklch(0.82 0.04 250);
+  --accent: oklch(0.55 0.25 264);
+  --accent-foreground: oklch(0.99 0 0);
+  --highlight: oklch(0.9 0.19 100);
+  --destructive: oklch(0.6 0.24 25);
+  --destructive-foreground: oklch(0.99 0 0);
+  --border: oklch(1 0 0 / 14%);
+  --input: oklch(1 0 0 / 18%);
+  --ring: oklch(0.7 0.19 45);
+
+  --gradient-hero: radial-gradient(
+      120% 90% at 85% 10%,
+      color-mix(in oklab, var(--secondary) 70%, transparent),
+      transparent 60%
+    ),
+    linear-gradient(160deg, var(--background), oklch(0.2 0.12 264));
+  --gradient-orange: linear-gradient(
+    100deg,
+    var(--primary),
+    color-mix(in oklab, var(--primary) 70%, var(--highlight))
+  );
+  --shadow-pop: 0 18px 40px -18px oklch(0 0 0 / 65%);
+  --shadow-glow: 0 0 0 2px color-mix(in oklab, var(--primary) 45%, transparent),
+    0 20px 45px -20px color-mix(in oklab, var(--primary) 55%, transparent);
+}
+
+@keyframes float-slow {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-14px) rotate(3deg);
+  }
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(22px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@keyframes spark {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: scale(0.9);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+}
+
+@keyframes drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(0, -18px, 0) scale(1.04);
+  }
+}
+
+@keyframes breathe {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -6px, 0);
+  }
+}
+
+@utility animate-drift {
+  animation: drift 14s ease-in-out infinite;
+  will-change: transform;
+}
+
+@utility animate-breathe {
+  animation: breathe 7s ease-in-out infinite;
+  will-change: transform;
+}
+
+@utility animate-float {
+  animation: float-slow 6s ease-in-out infinite;
+}
+
+@utility animate-rise {
+  animation: rise-in 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@utility animate-marquee {
+  animation: marquee 28s linear infinite;
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+@utility animate-spark {
+  animation: spark 2.4s ease-in-out infinite;
+}
+
+@utility press {
+  transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+
+  &:active {
+    transform: scale(0.985);
+  }
+}
+
+
+@utility text-outline {
+  -webkit-text-stroke: 2px var(--foreground);
+  color: transparent;
+}
+
+@utility surface-card {
+  background-color: var(--card);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-pop);
+  transition:
+    transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.35s ease,
+    background-color 0.35s ease;
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-glow);
+  }
+}
+
+@utility social-pill {
+  background: var(--gradient-orange);
+  color: var(--primary-foreground);
+  box-shadow: var(--shadow-pop);
+  transition:
+    transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.25s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-glow);
+  }
+}
+
+@utility highlight-box {
+
+  background: var(--gradient-orange);
+  color: var(--primary-foreground);
+  box-shadow: var(--shadow-pop);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background: var(--gradient-hero);
+    background-attachment: fixed;
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+    line-height: 0.95;
+  }
+
+  ::selection {
+    background: var(--primary);
+    color: var(--primary-foreground);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+    }
+  }
+}
