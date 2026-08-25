@@ -30,12 +30,12 @@ const ACOES = [
   {
     label: "Material de campanha",
     arte: banner2.url,
-    href: "#",
+    href: "https://drive.google.com/drive/folders/1OvA7dl1T9XT8fpfnBHfN1h0ZhN3QTOSQ?usp=sharing",
   },
   {
     label: "Músicas",
     arte: banner3.url,
-    href: "#",
+    href: "https://suamusica.com.br/kakasantosNt/o-novo-que-deu-certo-44555",
   },
   {
     label: "Figurinhas",
