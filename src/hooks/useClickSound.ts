@@ -11,7 +11,6 @@ export function useClickSound() {
 
   return useCallback(() => {
     if (typeof window === "undefined") return;
-    if (window.matchMedia?.("(prefers-reduced-motion: reduce)").matches) return;
 
     try {
       const AC =
