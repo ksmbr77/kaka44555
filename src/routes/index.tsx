@@ -40,7 +40,7 @@ const ACOES = [
   {
     label: "Figurinhas",
     arte: banner4.url,
-    href: "#",
+    href: "https://sticker.ly/user/kaka44555",
   },
   {
     label: "Participe do grupo",
