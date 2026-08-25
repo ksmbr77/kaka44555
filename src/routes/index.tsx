@@ -18,7 +18,7 @@ const CANDIDATO = {
   slogan: "O novo que deu certo!",
   cidade: "Sergipe",
   bio: "O novo que deu certo! Deputado Estadual por Sergipe.",
-  whatsapp: "#",
+  whatsapp: "https://chat.whatsapp.com/DQcAVOYCjoZHBXKixZJ2gE?mode=gi_t",
 };
 
 const ACOES = [
