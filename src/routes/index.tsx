@@ -84,15 +84,18 @@ function BioSite() {
       <div className="relative mx-auto w-full max-w-3xl px-4 pb-24 pt-10 sm:px-6 sm:pt-14">
         <header className="text-center">
           <Reveal>
-            <img
-              src={perfil.url}
-              alt={`${CANDIDATO.nome}, candidato a ${CANDIDATO.cargo}`}
-              width={500}
-              height={500}
-              loading="eager"
-              decoding="async"
-              className="mx-auto h-40 w-40 rounded-full object-cover shadow-[0_18px_40px_rgba(0,0,0,0.45)] sm:h-48 sm:w-48"
-            />
+            <div className="relative mx-auto h-40 w-40 sm:h-48 sm:w-48">
+              <div className="absolute inset-0 -z-10 rounded-full bg-primary/40 blur-2xl animate-breathe" />
+              <img
+                src={perfil.url}
+                alt={`${CANDIDATO.nome}, candidato a ${CANDIDATO.cargo}`}
+                width={500}
+                height={500}
+                loading="eager"
+                decoding="async"
+                className="h-40 w-40 rounded-full object-cover shadow-[0_18px_40px_rgba(0,0,0,0.45)] sm:h-48 sm:w-48 animate-breathe"
+              />
+            </div>
             <h1 className="mt-5 font-sans text-3xl font-bold normal-case tracking-normal sm:text-4xl">
               {CANDIDATO.nomeDestaque}
             </h1>
