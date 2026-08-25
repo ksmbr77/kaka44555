@@ -55,12 +55,7 @@
   --input: oklch(1 0 0 / 18%);
   --ring: oklch(0.74 0.2 55);
 
-  --gradient-hero: radial-gradient(
-      120% 90% at 85% 10%,
-      color-mix(in oklab, var(--secondary) 45%, transparent),
-      transparent 60%
-    ),
-    linear-gradient(160deg, var(--background), #6b2700);
+  --gradient-hero: var(--background);
   --gradient-orange: linear-gradient(
     100deg,
     var(--primary),
