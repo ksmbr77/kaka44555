@@ -35,7 +35,7 @@ const ACOES = [
   {
     label: "Músicas",
     arte: banner3.url,
-    href: "https://suamusica.com.br/kakasantosNt/o-novo-que-deu-certo-44555",
+    href: "https://open.spotify.com/intl-pt/artist/5Z1bKzhjP6CZfPbfNVHXu2",
   },
   {
     label: "Figurinhas",
