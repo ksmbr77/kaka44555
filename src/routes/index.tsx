@@ -77,8 +77,8 @@ function BioSite() {
   return (
     <main className="relative overflow-hidden">
       <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute -left-28 top-20 h-80 w-80 rounded-full bg-primary/20 blur-3xl animate-drift" />
-        <div className="absolute right-[-7rem] top-[30rem] h-96 w-96 rounded-full bg-accent/30 blur-3xl animate-drift [animation-delay:3s]" />
+        <div className="absolute -left-28 top-20 h-80 w-80 rounded-full bg-highlight/20 blur-3xl animate-drift" />
+        <div className="absolute right-[-7rem] top-[30rem] h-96 w-96 rounded-full bg-primary/30 blur-3xl animate-drift [animation-delay:3s]" />
       </div>
 
       <div className="relative mx-auto w-full max-w-3xl px-4 pb-24 pt-10 sm:px-6 sm:pt-14">
